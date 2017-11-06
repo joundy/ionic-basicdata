@@ -15,13 +15,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MatericontentPage {
 
-  bab: any = this.navParams.get('test');
+  
+  public idBab :any;
+  public babTitle :any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MatericontentPage');
+    // console.log(this.navParams.get('title'));
+    this.idBab = this.navParams.get('id');
+    this.babTitle = this.navParams.get('title');
   }
 
 }

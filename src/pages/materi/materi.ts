@@ -15,8 +15,13 @@ export class MateriPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public http : Http) {
   }
 
-  matericontent(bab){
-    this.navCtrl.push('MatericontentPage',{{ test: 1 }});
+  matericontent(babId,babTitle){
+
+    let data = {
+      id:babId,
+      title:babTitle
+    }
+    this.navCtrl.push('MatericontentPage',data);
   }
 
   ionViewDidLoad() {

@@ -22,7 +22,7 @@
           </ion-thumbnail>
           <h2>Bab {{ bab.no }}</h2>
           <p>{{ bab.title }}</p>
-          <button class="button-lihat" ion-button clear item-end (click)="matericontent({id:1})">Lihat</button>
+          <button class="button-lihat" ion-button clear item-end (click)="matericontent(bab.id,bab.title)">Lihat</button>
       </ion-item>
       
     </ion-list>
