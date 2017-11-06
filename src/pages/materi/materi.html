@@ -1,0 +1,29 @@
+<!--
+  Generated template for the MateriPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="header">
+
+  <ion-navbar>
+    <ion-title class="navbar-title">Bab Materi</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="">
+    <ion-list>
+        
+      <ion-item *ngFor="let bab of babs" class="bab-materi">
+          <ion-thumbnail class="img-thumbnail" item-start>
+            <img src="http://localhost/basicdata/_assets/yoo.jpg">
+          </ion-thumbnail>
+          <h2>Bab {{ bab.no }}</h2>
+          <p>{{ bab.title }}</p>
+          <button class="button-lihat" ion-button clear item-end (click)="matericontent({id:1})">Lihat</button>
+      </ion-item>
+      
+    </ion-list>
+</ion-content>
