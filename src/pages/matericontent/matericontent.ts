@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the MatericontentPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @IonicPage()
 @Component({
@@ -19,13 +14,25 @@ export class MatericontentPage {
   public idBab :any;
   public babTitle :any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public babContents :any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http : Http) {
   }
 
   ionViewDidLoad() {
     // console.log(this.navParams.get('title'));
     this.idBab = this.navParams.get('id');
     this.babTitle = this.navParams.get('title');
+    this.babContentLoad();
+    }
+
+  babContentLoad(){
+  	this.http.get('http://localhost/basicdata/bab/content.php?id=' + this.navParams.get('id'))
+  	.map(res => res.json())
+  	.subscribe(data=> {
+      this.babContents = data;
+      // console.log(data);
+    });
   }
 
 }
