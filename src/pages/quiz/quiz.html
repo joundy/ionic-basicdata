@@ -16,8 +16,8 @@
 <ion-content padding>
     <ion-item>
         <ion-label stacked>Nama Kamu</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input [(ngModel)]="userName" type="text"></ion-input>
     </ion-item>
     <br>
-    <button ion-button full>Mulai Quiz</button>    
+    <button ion-button full (click)="quizContent()">Mulai Quiz</button>    
 </ion-content>

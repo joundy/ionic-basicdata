@@ -18,8 +18,10 @@
       <b>{{ babContent.title }}</b>
     </ion-card-header>
   
-    <ion-card-content >
-      {{ babContent.content }}    
+    <ion-card-content ng-bind-html>
+      <div [innerHtml] = "babContent.content">
+        
+      </div>
     </ion-card-content>
   </ion-card>
 </ion-content>
