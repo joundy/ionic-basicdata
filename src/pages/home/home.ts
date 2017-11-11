@@ -10,7 +10,7 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
 
   }
-
+  
   main(id){
     this.navCtrl.push(id);
   }

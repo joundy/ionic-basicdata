@@ -11,8 +11,14 @@ import 'rxjs/add/operator/map';
 export class MateriPage {
 
   public babs : any;
+  // public data : any;
   
   constructor(public navCtrl: NavController, public navParams: NavParams, public http : Http) {
+    // this.data = {};
+    // this.data.username = '';
+    // this.data.response = '';
+
+    // this.http = http;
   }
 
   matericontent(babId,babTitle){
@@ -25,7 +31,18 @@ export class MateriPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MateriPage');
+
+    // var link = 'http://localhost/basicdata/test.php';
+    // var data = JSON.stringify({username: 'jondeasdfasdfadfss',password:'ssssess'});
+    
+    // this.http.post(link, data)
+    // .subscribe(data => {
+    //     // this.data.response = data._body;
+    // }, error => {
+    //     console.log("Oooops!");
+    // });
+
+
   }
 
   ionViewWillEnter(){
@@ -33,6 +50,7 @@ export class MateriPage {
   }
 
   babsLoad(){
+    
   	this.http.get('http://localhost/basicdata/bab/bab.php')
   	.map(res => res.json())
   	.subscribe(data=> {

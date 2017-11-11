@@ -2,6 +2,10 @@
     background-color: #ff8989;
 }
 
+.button-quiz{
+    background: linear-gradient(to right, #ff3157 0%,#fc6a5d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */    
+}
+
 .toolbar-background{
     background: linear-gradient(to right, #ff3157 0%,#fc6a5d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
@@ -16,4 +20,8 @@
 
 .menu{
 background: linear-gradient(to right, #ff3157 0%,#fc6a5d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.back-button-icon, .back-button-text{
+    color:white;
 }

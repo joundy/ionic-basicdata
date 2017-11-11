@@ -15,10 +15,12 @@
 <ion-content padding>
   <ion-card *ngFor="let babContent of babContents">
     <ion-card-header>
-      <b>{{ babContent.title }}</b>
+      <!-- <b>{{ babContent.title }}</b> -->
     </ion-card-header>
   
     <ion-card-content ng-bind-html>
+      <b>{{ babContent.title }}</b>
+        
       <div [innerHtml] = "babContent.content">
         
       </div>

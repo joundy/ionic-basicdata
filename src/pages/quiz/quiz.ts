@@ -15,7 +15,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class QuizPage {
 
+  public username:any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.username = '';
   }
 
   ionViewDidLoad() {
@@ -23,7 +26,14 @@ export class QuizPage {
   }
 
   quizContent(){
-    this.navCtrl.push('QuizcontentPage')
+    let data = {
+      username:this.username
+    };
+
+    this.navCtrl.push('QuizcontentPage',data);
+  }
+  test(){
+    console.log(this.username);
   }
 
 }

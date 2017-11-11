@@ -16,8 +16,32 @@
 <ion-content padding>
     <ion-item>
         <ion-label stacked>Nama Kamu</ion-label>
-        <ion-input [(ngModel)]="userName" type="text"></ion-input>
+        <ion-input [(ngModel)]="username" name="username" type="text"></ion-input>
     </ion-item>
     <br>
-    <button ion-button full (click)="quizContent()">Mulai Quiz</button>    
+    <button class="button-quiz" ion-button full (click)="quizContent()" round clear color="light">Mulai Quiz</button>  
+    
+    <div class="score">
+      <h4>Score</h4>
+      <table>
+        <tr>
+          <td>1.</td>
+          <td>jondessya</td>
+          <td>:</td>
+          <td>199</td>
+        </tr>
+        <tr>
+            <td>2.</td>            
+            <td>jon</td>
+            <td>:</td>
+            <td>199</td>
+          </tr>
+          <tr>
+              <td>3.</td>          
+              <td>niknik</td>
+              <td>:</td>
+              <td>199</td>
+            </tr>
+      </table>
+    </div>
 </ion-content>
