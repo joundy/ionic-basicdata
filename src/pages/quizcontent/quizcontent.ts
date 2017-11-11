@@ -16,14 +16,25 @@ import { AlertController } from 'ionic-angular';
 export class QuizcontentPage {
 
   public username:any;
+  public quiz:any;
+  public dataQuiz:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+    this.quiz = {};
   }
 
   ionViewDidLoad() {
     this.username = this.navParams.get('username');
     console.log('yolo');
   }
+
+  prepareData(){
+    this.dataQuiz = {
+      username:this.username,
+      quiz:this.quiz
+    };
+  }
+
   showConfirm() {
     let confirm = this.alertCtrl.create({
       title: 'Kirim Quiz?',
@@ -38,7 +49,8 @@ export class QuizcontentPage {
         {
           text: 'Kirim',
           handler: () => {
-            console.log('Agree clicked');
+            this.prepareData();
+            console.log(this.dataQuiz);
           }
         }
       ]
