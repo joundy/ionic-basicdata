@@ -39,7 +39,7 @@ export class QuizcontentPage {
   }
 
   quizLoad(){
-  	this.http.get('http://localhost/basicdata/quiz/getquiz.php')
+  	this.http.get('https://www.zrthrteam.duniaarloji.com/quiz/getquiz.php')
   	.map(res => res.json())
   	.subscribe(data=> {
       this.quizData = data;

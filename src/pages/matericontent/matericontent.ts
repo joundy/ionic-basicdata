@@ -28,7 +28,7 @@ export class MatericontentPage {
     }
 
   babContentLoad(){
-  	this.http.get('http://localhost/basicdata/bab/content.php?id=' + this.navParams.get('id'))
+  	this.http.get('https://www.zrthrteam.duniaarloji.com/bab/content.php?id=' + this.navParams.get('id'))
   	.map(res => res.json())
   	.subscribe(data=> {
       this.babContents = data;

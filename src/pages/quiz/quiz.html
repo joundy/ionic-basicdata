@@ -24,24 +24,12 @@
     <div class="score">
       <h4>Score</h4>
       <table>
-        <tr>
-          <td>1.</td>
-          <td>jondessya</td>
+        <tr *ngFor="let score of scores let i=index">
+          <td>{{ i + 1 }}.</td>
+          <td>{{ score.username }}</td>
           <td>:</td>
-          <td>199</td>
+          <td>{{ score.score }}</td>
         </tr>
-        <tr>
-            <td>2.</td>            
-            <td>jon</td>
-            <td>:</td>
-            <td>199</td>
-          </tr>
-          <tr>
-              <td>3.</td>          
-              <td>niknik</td>
-              <td>:</td>
-              <td>199</td>
-            </tr>
       </table>
     </div>
 </ion-content>

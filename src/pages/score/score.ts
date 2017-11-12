@@ -30,7 +30,7 @@ export class ScorePage {
     var quiz = this.navParams.get('quiz');
     var username = this.navParams.get('username');
 
-    var link = 'http://localhost/basicdata/quiz/result.php';
+    var link = 'https://www.zrthrteam.duniaarloji.com/quiz/result.php';
     var data = JSON.stringify({username: username,quiz:quiz});
     
     this.http.post(link, data)

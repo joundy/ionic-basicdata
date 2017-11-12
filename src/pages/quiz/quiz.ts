@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 /**
  * Generated class for the QuizPage page.
@@ -16,13 +18,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class QuizPage {
 
   public username:any;
+  public scores:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http : Http) {
     this.username = '';
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad QuizPage');
+  }
+
+  ionViewDidEnter(){
+    this.http.get('https://www.zrthrteam.duniaarloji.com/quiz/score.php')
+  	.map(res => res.json())
+  	.subscribe(data=> {
+      this.scores = data;
+      console.log(data);
+    });
   }
 
   quizContent(){
