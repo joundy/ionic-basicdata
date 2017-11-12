@@ -1,0 +1,49 @@
+<!--
+  Generated template for the ScorePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar  hideBackButton="true">
+    <ion-title>Score</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+    <ion-card>
+        <ion-card-header>
+          <p class="score-kamu">Score {{ username }}</p>
+        </ion-card-header>
+        <div>
+          
+        </div>
+        <ion-card-content class="quiz-content">
+
+          <div class="score-round">
+            <div class="score-num">
+                <h2>{{ score }}</h2>
+            </div>
+          </div>
+
+          <table>
+            <tr>
+              <td>Benar</td>
+              <td>:</td>
+              <td>{{ correct }}</td>
+            </tr>
+            <tr>
+              <td>Salah</td>
+              <td>:</td>
+              <td>{{ incorrect }}</td>
+            </tr>
+          </table>
+
+          <button class="button-quiz" ion-button full clear color="light" round (click)="back()"  >Kembali</button>    
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>
