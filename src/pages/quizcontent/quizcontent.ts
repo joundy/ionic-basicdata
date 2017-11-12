@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 /**
  * Generated class for the QuizcontentPage page.
  *
@@ -19,13 +21,29 @@ export class QuizcontentPage {
   public quiz:any;
   public dataQuiz:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+  public data:any;
+
+  public quizData:any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public http : Http) {
     this.quiz = {};
+    this.data = {};
   }
 
   ionViewDidLoad() {
     this.username = this.navParams.get('username');
-    console.log('yolo');
+    this.quizLoad();
+    console.log(this.quizData);
+    
+  }
+
+  quizLoad(){
+  	this.http.get('http://localhost/basicdata/quiz/getquiz.php')
+  	.map(res => res.json())
+  	.subscribe(data=> {
+      this.quizData = data;
+      // console.log(data);
+    });
   }
 
   prepareData(){
@@ -33,6 +51,19 @@ export class QuizcontentPage {
       username:this.username,
       quiz:this.quiz
     };
+  }
+
+  quizResult(){
+    var link = 'http://localhost/basicdata/test.php';
+    var data = JSON.stringify({username: this.username,quiz:this.quiz});
+    
+    this.http.post(link, data)
+    .subscribe(data => {
+        // this.data.response = data._body;
+        console.log('yoolo');
+    }, error => {
+        console.log("Oooops!");
+    });
   }
 
   showConfirm() {
@@ -50,6 +81,7 @@ export class QuizcontentPage {
           text: 'Kirim',
           handler: () => {
             this.prepareData();
+            this.quizResult();
             console.log(this.dataQuiz);
           }
         }

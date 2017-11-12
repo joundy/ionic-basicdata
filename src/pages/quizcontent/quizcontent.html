@@ -16,38 +16,27 @@
 <ion-content padding>
   <p style="text-align:center">Username kamu : {{ username }}</p>
 
-    <ion-card>
+    <ion-card *ngFor="let quizs of quizData">
         <ion-card-header>
           <p>Soal No 1 - 9</p>
         </ion-card-header>
-      
-        <ion-card-content class="quiz-content" radio-group [(ngModel)]="quiz.q1">
-          <p>Jika telah menetapkan bahwa tipe data untuk sebuah atribut adalah integer, maka kita hanya mungkin untuk menyimpan data angka yang bulat diantara angka..?</p>
+        <div>
+          
+        </div>
+        <ion-card-content class="quiz-content" radio-group [(ngModel)]="quiz.qu">
+          <div [innerHtml] = "quizs.quiz"></div>
 
-          <label for=""><ion-radio value="a">test</ion-radio> –32.768 hingga 32.768.</label>
-          <label for=""><ion-radio value="b">test</ion-radio> –32.786 hingga 32.768</label>
-          <label for=""><ion-radio value="c">test</ion-radio> –32.867 hingga 32.7688</label>
-          <label for=""><ion-radio value="d">test</ion-radio> –32.768 hingga 32.786</label>
-
-        </ion-card-content>
-      </ion-card>
-
-      <ion-card>
-        <ion-card-header>
-          <p>Soal No 1 - 9</p>
-        </ion-card-header>
-      
-        <ion-card-content class="quiz-content" radio-group [(ngModel)]="quiz.q2">
-          <p>Jika telah menetapkan bahwa tipe data untuk sebuah atribut adalah integer, maka kita hanya mungkin untuk menyimpan data angka yang bulat diantara angka..?</p>
-
-              <label for=""><ion-radio value="a">test</ion-radio> –32.768 hingga 32.768.</label>
-              <label for=""><ion-radio value="b">test</ion-radio> –32.786 hingga 32.768</label>
-              <label for=""><ion-radio value="c">test</ion-radio> –32.867 hingga 32.7688</label>
-              <label for=""><ion-radio value="d">test</ion-radio> –32.768 hingga 32.786</label>
+          <label for=""><ion-radio value="a">test</ion-radio> {{ quizs.a }}</label>
+          <label for=""><ion-radio value="b">test</ion-radio> {{ quizs.b }}</label>
+          <label for=""><ion-radio value="c">test</ion-radio> {{ quizs.c }}</label>
+          <label for=""><ion-radio value="d">test</ion-radio> {{ quizs.d }}</label>
+          <label for=""><ion-radio value="e">test</ion-radio> {{ quizs.e }}</label>
 
         </ion-card-content>
-      </ion-card>
+    </ion-card>
 
       <button class="button-quiz" ion-button full clear color="light" round (click)="showConfirm()" >Kirim Quiz</button>    
-      
+    <!-- <div *ngFor="let quiz of quizData">
+        <p>{{ quiz.id }}</p>
+    </div> -->
 </ion-content>
