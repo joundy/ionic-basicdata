@@ -16,21 +16,21 @@
 <ion-content padding>
   <p style="text-align:center">Username kamu : {{ username }}</p>
 
-    <ion-card *ngFor="let quizs of quizData">
+    <ion-card *ngFor="let quizs of quizData let i=index">
         <ion-card-header>
-          <p>Soal No 1 - 9</p>
+          <p class="quiz-no">Soal No {{ i + 1 }}</p>
         </ion-card-header>
         <div>
           
         </div>
-        <ion-card-content class="quiz-content" radio-group [(ngModel)]="quiz.qu">
+        <ion-card-content class="quiz-content" radio-group [(ngModel)]="quiz[quizs.id]">
           <div [innerHtml] = "quizs.quiz"></div>
 
-          <label for=""><ion-radio value="a">test</ion-radio> {{ quizs.a }}</label>
-          <label for=""><ion-radio value="b">test</ion-radio> {{ quizs.b }}</label>
-          <label for=""><ion-radio value="c">test</ion-radio> {{ quizs.c }}</label>
-          <label for=""><ion-radio value="d">test</ion-radio> {{ quizs.d }}</label>
-          <label for=""><ion-radio value="e">test</ion-radio> {{ quizs.e }}</label>
+          <label for=""><ion-radio value="a">a</ion-radio> {{ quizs.a }}</label>
+          <label for=""><ion-radio value="b">b</ion-radio> {{ quizs.b }}</label>
+          <label for=""><ion-radio value="c">c</ion-radio> {{ quizs.c }}</label>
+          <label for=""><ion-radio value="d">d</ion-radio> {{ quizs.d }}</label>
+          <label for=""><ion-radio value="e">e</ion-radio> {{ quizs.e }}</label>
 
         </ion-card-content>
     </ion-card>

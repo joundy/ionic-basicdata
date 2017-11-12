@@ -18,15 +18,14 @@ import 'rxjs/add/operator/map';
 export class QuizcontentPage {
 
   public username:any;
-  public quiz:any;
+  public quiz:any[] = {};
   public dataQuiz:any;
-
   public data:any;
-
   public quizData:any;
 
+  public no:any = 1;
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public http : Http) {
-    this.quiz = {};
+    // this.quiz = {};
     this.data = {};
   }
 
