@@ -14,8 +14,12 @@
 
 
 <ion-content padding class="body">
-  <div (click)="quizPage()" class="quiz-select-button">
-    <h4>Quiz1</h4>
-    <p>lebih menantang</p>
+
+  <div *ngFor="let quizLevel of quizLevels">
+      <div (click)="quizPage(quizLevel.id,quizLevel.title)" class="quiz-select-button">
+          <h4>{{ quizLevel.title }}</h4>
+          <p>{{ quizLevel.content }}</p>
+        </div>
   </div>
+  
 </ion-content>

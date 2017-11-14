@@ -17,6 +17,9 @@ import 'rxjs/add/operator/map';
 })
 export class ScorePage {
 
+  public quizTitle:any;
+  public quizId:any;
+
   public username:any;
   public score:any;
   public correct:any;
@@ -27,11 +30,15 @@ export class ScorePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ScorePage');
+    this.quizTitle = this.navParams.get('quizTitle');
+    this.quizId = this.navParams.get('quizId');
+
     var quiz = this.navParams.get('quiz');
     var username = this.navParams.get('username');
+    var id = this.quizId;
 
     var link = 'https://localhost/basicdata/quiz/result.php';
-    var data = JSON.stringify({username: username,quiz:quiz});
+    var data = JSON.stringify({username: username,id:id,quiz:quiz});
     
     this.http.post(link, data)
     .map(res => res.json())
@@ -46,11 +53,22 @@ export class ScorePage {
     }, error => {
         console.log("Oooops!");
     });
+
+    
   }
 
   back(){
-    this.navCtrl.remove(2,1);
+    this.navCtrl.remove(3,1);
     this.navCtrl.pop();
+  }
+
+  quizAnswer(){
+    let data = {
+      quizTitle:this.quizTitle,
+      quizId:this.quizId
+    };
+
+    this.navCtrl.push('QuizanswerPage',data);
   }
 
   quizResult(){

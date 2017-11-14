@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 /**
  * Generated class for the QuizselectPage page.
@@ -15,15 +17,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class QuizselectPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public quizLevels:any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http:Http) {
   }
 
   ionViewDidLoad() {
+    this.http.get('http://localhost/basicdata/quiz/getlevel.php')
+  	.map(res => res.json())
+  	.subscribe(data=> {
+      this.quizLevels = data;
+    });
     console.log('ionViewDidLoad QuizselectPage');
   }
 
-  quizPage(){
-    this.navCtrl.push('QuizPage');
+  quizPage(quizId,quizTitle){
+    let data = {
+      quizId:quizId,
+      quizTitle:quizTitle
+    };
+    this.navCtrl.push('QuizPage',data);
   }
 
 }

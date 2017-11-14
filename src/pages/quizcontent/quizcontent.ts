@@ -17,6 +17,9 @@ import 'rxjs/add/operator/map';
 })
 export class QuizcontentPage {
 
+  public quizTitle:any;
+  public quizId:any;
+
   public username:any;
   public quiz:any;
   public dataQuiz:any;
@@ -32,14 +35,16 @@ export class QuizcontentPage {
   }
 
   ionViewDidLoad() {
+    this.quizTitle = this.navParams.get('quizTitle');
+    this.quizId = this.navParams.get('quizId');
+
     this.username = this.navParams.get('username');
     this.quizLoad();
     console.log(this.quizData);
-    
   }
 
   quizLoad(){
-  	this.http.get('https://localhost/basicdata/quiz/getquiz.php')
+  	this.http.get('https://localhost/basicdata/quiz/getquiz.php?id='+this.quizId)
   	.map(res => res.json())
   	.subscribe(data=> {
       this.quizData = data;
@@ -49,7 +54,9 @@ export class QuizcontentPage {
   prepareData(){
     this.dataQuiz = {
       username:this.username,
-      quiz:this.quiz
+      quiz:this.quiz,
+      quizTitle:this.quizTitle,
+      quizId:this.quizId
     };
   }
 
@@ -62,7 +69,7 @@ export class QuizcontentPage {
         {
           text: 'Cek Kembali',
           handler: () => {
-            console.log('Disagree clicked');
+            console.log('rasida');
           }
         },
         {

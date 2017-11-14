@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar  hideBackButton="true">
-    <ion-title>Score</ion-title>
+    <ion-title>Score Quiz {{ quizTitle }}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -42,6 +42,7 @@
             </tr>
           </table>
 
+          <button class="button-quiz" ion-button full clear color="light" round (click)="quizAnswer()"  >Pembahasan</button>              
           <button class="button-quiz" ion-button full clear color="light" round (click)="back()"  >Kembali</button>    
         </ion-card-content>
     </ion-card>
