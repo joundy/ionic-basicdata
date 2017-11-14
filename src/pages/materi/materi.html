@@ -18,7 +18,7 @@
         
       <ion-item *ngFor="let bab of babs" class="bab-materi">
           <ion-thumbnail class="img-thumbnail" item-start>
-            <img src="https://localhost/basicdata/_assets/yoo.jpg">
+            <img src="{{ bab.imgpath }}">
           </ion-thumbnail>
           <h2>Bab {{ bab.no }}</h2>
           <p>{{ bab.title }}</p>

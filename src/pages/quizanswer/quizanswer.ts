@@ -29,7 +29,7 @@ export class QuizanswerPage {
     this.quizTitle = this.navParams.get('quizTitle');
     this.quizId = this.navParams.get('quizId');
 
-    this.http.get('http://localhost/basicdata/quiz/answer.php?id='+this.quizId)
+    this.http.get('https://www.zrthrteam.duniaarloji.com/quiz/answer.php?id='+this.quizId)
   	.map(res => res.json())
   	.subscribe(data=> {
       this.quizAnswers = data;

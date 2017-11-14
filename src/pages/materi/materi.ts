@@ -51,7 +51,7 @@ export class MateriPage {
 
   babsLoad(){
     
-  	this.http.get('https://localhost/basicdata/bab/bab.php')
+  	this.http.get('https://www.zrthrteam.duniaarloji.com/bab/bab.php')
   	.map(res => res.json())
   	.subscribe(data=> {
   		this.babs = data;

@@ -23,7 +23,7 @@ export class QuizselectPage {
   }
 
   ionViewDidLoad() {
-    this.http.get('http://localhost/basicdata/quiz/getlevel.php')
+    this.http.get('https://www.zrthrteam.duniaarloji.com/quiz/getlevel.php')
   	.map(res => res.json())
   	.subscribe(data=> {
       this.quizLevels = data;

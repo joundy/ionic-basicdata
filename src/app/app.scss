@@ -31,8 +31,9 @@ background: linear-gradient(to right, #ff3157 0%,#fc6a5d 100%); /* W3C, IE10+, F
     border-radius: 25px;
 }
 .body{
-    background-image: url('../assets/imgs/bg-gradient.jpg');
-    // size:cover;
+    // background-image: url('../assets/imgs/bg-gradient.jpg');
+    // position:center;
+    background-repeat: repeat-x;
 }
 
 .list{
