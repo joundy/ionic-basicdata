@@ -29,7 +29,7 @@ export class QuizPage {
   }
 
   ionViewDidEnter(){
-    this.http.get('https://www.zrthrteam.duniaarloji.com/quiz/score.php')
+    this.http.get('https://localhost/basicdata/quiz/score.php')
   	.map(res => res.json())
   	.subscribe(data=> {
       this.scores = data;

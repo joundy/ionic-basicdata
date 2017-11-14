@@ -1,5 +1,35 @@
 page-about {
-    .about h5, .about p{
-        line-height: 10px;
+    // .about h5, .about p{
+    //     line-height: 10px;
+    // }
+    .about{
+        text-align:center;
+    }
+    .team{
+        margin-top: 20px;
+    }
+    .team h4{
+        color:#424242;
+    }
+    .team p{
+        line-height: 5px;
+        color:#525252;
+    }
+    .copyright{
+        text-align: center;
+        color:#424242;
+        margin-top: 50px;
+    }
+
+    .img-logo{
+        max-width: 150px;
+        /* height: auto; */
+        position: relative;
+        left: 50%;
+        border-radius: 75px;
+        margin:25px auto 25px -75px;
+        -webkit-box-shadow: 0px 0px 112px -29px rgba(0,0,0,0.52);
+        -moz-box-shadow: 0px 0px 112px -29px rgba(0,0,0,0.52);
+        box-shadow: 0px 0px 112px -29px rgba(0,0,0,0.52);
     }
 }
